@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"D:\\\\anaconda\\\\source_code\\\\workspace\\\\todo\" -Force)",
+      "Bash(Select-Object FullName, PSIsContainer)",
+      "PowerShell(Invoke-Item *)"
+    ]
+  }
+}

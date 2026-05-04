@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Park - 초등학교 교사 & AI 교육 크리에이터</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: #0D0D0D;
+            color: #FFFFFF;
+        }
+
+        /* 대각선 배경 장식 */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(245, 158, 11, 0.05) 50%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* 기하학적 라인 */
+        .geometric-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .line {
+            position: absolute;
+            background: linear-gradient(to right, transparent, rgba(245, 158, 11, 0.2), transparent);
+        }
+
+        .line-1 {
+            width: 300px;
+            height: 2px;
+            top: 20%;
+            left: -100px;
+            transform: skewX(-45deg);
+        }
+
+        .line-2 {
+            width: 250px;
+            height: 2px;
+            top: 50%;
+            left: -80px;
+            transform: skewX(-45deg);
+        }
+
+        .line-3 {
+            width: 350px;
+            height: 2px;
+            top: 70%;
+            left: -120px;
+            transform: skewX(-45deg);
+        }
+
+        /* 그라디언트 텍스트 */
+        .gradient-text {
+            background: linear-gradient(90deg, #F59E0B, #10B981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* 애니메이션 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .card-dark {
+            background-color: #1A1A1A;
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .card-dark:hover {
+            border-color: #F59E0B;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+        }
+
+        .badge {
+            background-color: rgba(245, 158, 11, 0.1);
+            border: 1px solid #F59E0B;
+            color: #F59E0B;
+            transition: all 0.3s ease;
+        }
+
+        .badge:hover {
+            background-color: #F59E0B;
+            color: #0D0D0D;
+        }
+
+        .btn-glow {
+            position: relative;
+            border: 2px solid #F59E0B;
+            color: #F59E0B;
+            transition: all 0.3s ease;
+        }
+
+        .btn-glow:hover {
+            background-color: #F59E0B;
+            color: #0D0D0D;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+        }
+
+        /* JP 아이콘 */
+        .jp-icon {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, #F59E0B, #10B981);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: 900;
+            color: #0D0D0D;
+            box-shadow: 0 10px 40px rgba(245, 158, 11, 0.3);
+        }
+
+        /* 섹션 padding */
+        section {
+            scroll-margin-top: 100px;
+        }
+
+        /* 스타 파티클 배경 */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black text-white">Jason Park</div>
+            <div class="flex gap-8 items-center">
+                <a href="#about" class="text-gray-300 hover:text-amber-400 transition">역량</a>
+                <a href="#skills" class="text-gray-300 hover:text-amber-400 transition">기술스택</a>
+                <a href="#interests" class="text-gray-300 hover:text-amber-400 transition">관심사</a>
+                <a href="mailto:gourd20201@gmail.com" class="text-amber-400 hover:text-amber-300 transition">문의</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative hero-bg min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="geometric-lines">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- 왼쪽 텍스트 -->
+                <div class="fade-in">
+                    <div class="text-amber-400 text-sm font-bold tracking-widest mb-4">환영합니다</div>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+                        HI,<br>I'M <span class="gradient-text">JASON</span>
+                    </h1>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-gray-300 mb-8">
+                        초등학교 교사 & AI 교육 크리에이터
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-10 leading-relaxed">
+                        질문 있는 수업으로 아이들의 사고력을 키우고, AI와 코딩을 통해 미래 세대를 준비시키는 교육자입니다.
+                    </p>
+                    <a href="#about" class="inline-block btn-glow px-8 py-3 rounded-lg font-bold text-lg">
+                        더 알아보기 ↗
+                    </a>
+                </div>
+
+                <!-- 오른쪽 JP 아이콘 -->
+                <div class="flex justify-center fade-in" style="animation-delay: 0.2s;">
+                    <div class="jp-icon">JP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / 주요 역량 Section -->
+    <section id="about" class="py-20 bg-gray-900/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 fade-in">
+                <h2 class="text-4xl sm:text-5xl font-black mb-6">주요 역량</h2>
+                <p class="text-gray-400 text-lg">
+                    30년 이상의 교육 경험과 최신 기술을 결합한 창의적인 교육 방식
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 카드 1 -->
+                <div class="card-dark p-8 rounded-lg fade-in" style="animation-delay: 0.1s;">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-2xl font-bold mb-4">초등 교육과정 설계</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        <span class="text-amber-400 font-semibold">질문 있는 수업</span>을 통해 학생들의 비판적 사고력과 창의력을 발달시키는 교육과정을 설계합니다. 학습자 중심의 교육으로 학생들이 능동적으로 지식을 구성하도록 유도합니다.
+                    </p>
+                </div>
+
+                <!-- 카드 2 -->
+                <div class="card-dark p-8 rounded-lg fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-4xl mb-4">🤖</div>
+                    <h3 class="text-2xl font-bold mb-4">바이브코딩 & AI 교육</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        <span class="text-amber-400 font-semibold">바이브코딩</span>을 활용한 창의적인 교육 콘텐츠 개발과 <span class="text-amber-400 font-semibold">AI 도구</span>를 활용한 미래 지향적인 수업으로 학생들을 4차 산업혁명 시대에 대비시킵니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 기술 스택 Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 fade-in">
+                <h2 class="text-4xl sm:text-5xl font-black mb-6">기술 스택</h2>
+                <p class="text-gray-400 text-lg">
+                    교육 콘텐츠 개발과 학습 자동화를 위한 도구들
+                </p>
+            </div>
+
+            <div class="flex flex-wrap gap-4 fade-in" style="animation-delay: 0.1s;">
+                <span class="badge px-6 py-3 rounded-full font-semibold">Python</span>
+                <span class="badge px-6 py-3 rounded-full font-semibold">n8n</span>
+                <span class="badge px-6 py-3 rounded-full font-semibold">ChatGPT</span>
+                <span class="badge px-6 py-3 rounded-full font-semibold">Claude</span>
+                <span class="badge px-6 py-3 rounded-full font-semibold">Google Colab</span>
+                <span class="badge px-6 py-3 rounded-full font-semibold">Perplexity AI</span>
+                <span class="badge px-6 py-3 rounded-full font-semibold">Canva</span>
+                <span class="badge px-6 py-3 rounded-full font-semibold">Google Workspace</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 관심사 & 라이프스타일 Section -->
+    <section id="interests" class="py-20 bg-gray-900/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-16 fade-in">
+                <h2 class="text-4xl sm:text-5xl font-black mb-6">라이프스타일 & 관심사</h2>
+                <p class="text-gray-400 text-lg">
+                    업무 외에도 즐기는 여러 활동들
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 관심사 카드들 -->
+                <div class="card-dark p-8 rounded-lg text-center fade-in" style="animation-delay: 0.1s;">
+                    <div class="text-5xl mb-4">🍳</div>
+                    <h3 class="text-xl font-bold mb-2">요리</h3>
+                    <p class="text-gray-400">다양한 요리를 통해 창의성과 즐거움을 표현합니다.</p>
+                </div>
+
+                <div class="card-dark p-8 rounded-lg text-center fade-in" style="animation-delay: 0.2s;">
+                    <div class="text-5xl mb-4">⛺</div>
+                    <h3 class="text-xl font-bold mb-2">캠핑</h3>
+                    <p class="text-gray-400">자연 속에서 마음을 정화하고 휴식을 취합니다.</p>
+                </div>
+
+                <div class="card-dark p-8 rounded-lg text-center fade-in" style="animation-delay: 0.3s;">
+                    <div class="text-5xl mb-4">🚴</div>
+                    <h3 class="text-xl font-bold mb-2">사이클</h3>
+                    <p class="text-gray-400">자전거를 통해 건강하고 활동적인 삶을 추구합니다.</p>
+                </div>
+
+                <div class="card-dark p-8 rounded-lg text-center fade-in" style="animation-delay: 0.4s;">
+                    <div class="text-5xl mb-4">🔮</div>
+                    <h3 class="text-xl font-bold mb-2">사주</h3>
+                    <p class="text-gray-400">동양 철학을 통해 인생의 의미를 탐구합니다.</p>
+                </div>
+
+                <div class="card-dark p-8 rounded-lg text-center fade-in" style="animation-delay: 0.5s;">
+                    <div class="text-5xl mb-4">📖</div>
+                    <h3 class="text-xl font-bold mb-2">독서</h3>
+                    <p class="text-gray-400">다양한 분야의 책을 통해 지식과 통찰력을 얻습니다.</p>
+                </div>
+
+                <div class="card-dark p-8 rounded-lg text-center fade-in" style="animation-delay: 0.6s;">
+                    <div class="text-5xl mb-4">✨</div>
+                    <h3 class="text-xl font-bold mb-2">성장</h3>
+                    <p class="text-gray-400">끊임없는 학습과 자기계발로 나아갑니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 py-12 bg-black/50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div>
+                    <h3 class="text-2xl font-black text-white mb-2">Jason Park</h3>
+                    <p class="text-gray-400">초등학교 교사 & AI 교육 크리에이터</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-gray-400 mb-4">연락 주세요</p>
+                    <a href="mailto:gourd20201@gmail.com" class="text-amber-400 hover:text-amber-300 font-semibold transition">
+                        gourd20201@gmail.com
+                    </a>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    © 2026 Jason Park. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 스크롤 애니메이션
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const delay = entry.target.style.animationDelay || '0s';
+                    entry.target.style.animation = `fadeInUp 0.8s ease-out forwards`;
+                    entry.target.style.animationDelay = delay;
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // 스무스 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
