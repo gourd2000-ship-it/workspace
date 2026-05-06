@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//d/anaconda/source_code/workspace/.claude/**)",
+      "Read(//d/anaconda/source_code/workspace/**)",
+      "WebFetch(domain:ui.shadcn.com)",
+      "Bash(npm install *)",
+      "Bash(npm run *)"
+    ]
+  }
+}
